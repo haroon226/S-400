@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>S400</title>
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: flex-start; /* push everything to the left */
+      align-items: center;         /* vertical centering */
+      background: url('mesh.png') no-repeat center center fixed;
+      background-size: cover; /* fill screen with background */
+	  font-family: FreeMono, monospace;
+    text-align: center;
+    }
+
+    .model-container {
+      width: 500px;              
+      height: 500px;             
+      border: 5px solid #333;    
+      border-radius: 30px;       
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #2A3439;
+      margin-left: 40px; /* space from the left edge */
+    }
+
+    model-viewer {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    /* Space for info on the right */
+    .info {
+      flex: 1;
+      padding: 40px;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <!-- Left: model -->
+  <div class="model-container">
+    <model-viewer
+      src="s400.glb"
+      alt="3D Model"
+      auto-rotate
+      rotation-per-second="20deg"
+      camera-controls
+      interaction-prompt="auto"
+      disable-pan>
+    </model-viewer>
+  </div>
+
+  <!-- Right: info text -->
+  <div class="info">
+    <h1>S-400 Triumf</h1>
+    <p>The S-400 Triumf, previously known as the S-300 PMU-3,[4] is a mobile surface-to-air missile (SAM) system developed in the 1990s by Russia's NPO Almaz as an upgrade to the S-300 family of missiles. .</p>
+  </div>
+</body>
+</html>
